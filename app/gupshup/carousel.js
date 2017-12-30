@@ -1,11 +1,12 @@
-var carousel = {
-    type: "catalogue",
-    items: []
-}
+
 
 module.exports = {
     add: (results) => {
         results = Array.isArray(results) ? results : [results];
+        let carousel = {
+            type: "catalogue",
+            items: []
+        }
         results.forEach(result => {
             let item = {
                 title: result.name,
@@ -26,6 +27,10 @@ module.exports = {
     },
     view: function (results) {
         results = Array.isArray(results) ? results : [results];
+        let carousel = {
+            type: "catalogue",
+            items: []
+        }
         results.forEach(result => {
             let item = {
                 title: result.name,
