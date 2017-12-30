@@ -15,12 +15,10 @@
   "author": "Jack Hsu",
   "license": "ISC",
   "dependencies": {
-    "async": "^2.6.0",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
-    "http": "0.0.0",
     "https": "^1.0.0",
-    "mongoose": "^5.0.0-rc0",
+    "mongodb": "^3.0.1",
     "request": "^2.83.0",
     "request-promise": "^4.2.2",
     "utf8": "^3.0.0"
