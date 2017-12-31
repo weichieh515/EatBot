@@ -1,5 +1,3 @@
-
-
 module.exports = {
     add: (results) => {
         results = Array.isArray(results) ? results : [results];
@@ -18,7 +16,7 @@ module.exports = {
                     url: result.mapUrl
                 }, {
                     type: 'text',
-                    title: `Add this #${result.place_id}`
+                    title: 'Add to Titansoft List'
                 }]
             };
             carousel.items.push(item);

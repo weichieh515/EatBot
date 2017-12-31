@@ -27,11 +27,12 @@ router.post('/search', (req, res, next) => {
 });
 
 router.post('/choose', (req, res, next) => {
-    let place_id = req.body.place_id;
-    if (place_id) {
-        console.log(`place_id:${place_id}`);
-        googleAPI.detail(place_id, (detail) => {
-            detail = mapping(detail);
+    let name = req.body.name;
+    let index = req.body.index;
+    if (index) {
+        console.log(`name:${name} | index:${index}`);
+        googleAPI.search(name, (detail) => {
+            detail = mapping(detail[index - 1]);
             restaurant.add(detail, () => {
                 res.json(carousel.view(detail)).status(200);
             }, (err) => {
