@@ -1,6 +1,7 @@
 const rp = require('request-promise');
 
-module.exports = function (urls, callback) {
+module.exports = (urls, callback, errHandle) => {
+    //change [url] to array if not so.
     let multi = Array.isArray(urls);
     urls = multi ? urls : [urls];
 
@@ -17,6 +18,6 @@ module.exports = function (urls, callback) {
             return callback(multi ? arrayOfResp : arrayOfResp[0]);
         })
         .catch(function (err) {
-            console.log(err);
+            return errHandle(err);
         });
 }

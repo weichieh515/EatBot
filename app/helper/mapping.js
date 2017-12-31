@@ -1,7 +1,8 @@
 //helper
 const makeUrl = require('./makeUrl');
 
-module.exports = function (details) {
+module.exports = (details) => {
+
     let isArray = Array.isArray(details)
     details = isArray ? details : [details];
     let restaurants = []
@@ -20,6 +21,7 @@ module.exports = function (details) {
     return isArray ? restaurants : restaurants[0];
 }
 
+//local function
 function opening_hours(opening_hours) {
     if (opening_hours === undefined) {
         return null;

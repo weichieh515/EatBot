@@ -17,6 +17,7 @@ module.exports = {
     }
 }
 
+//local function
 function toUrlArray(place_id) {
     let urls = []
     place_id.forEach(id => {
