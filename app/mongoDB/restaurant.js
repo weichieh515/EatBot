@@ -1,8 +1,33 @@
 const connect = require('./connect');
-module.exports = {
+
+let self = module.exports = {
     add: (restaurant, callback, errHandle) => {
+        self.findOne(restaurant, (result) => {
+            if (!result) {
+                self.insert(restaurant, callback, errHandle);
+            } else {
+                return errHandle({
+                    message: `${restaurant.name} already exits`
+                })
+            }
+        }, (err) => {
+            return errHandle(err);
+        })
+    },
+    insert: (restaurant, callback, errHandle) => {
         connect((db) => {
             db.collection('restaurant').save(restaurant, (err, result) => {
+                return err ? errHandle(err) : callback(result);
+            });
+        }, (err) => {
+            return errHandle(err);
+        })
+    },
+    findOne: (restaurant, callback, errHandle) => {
+        connect((db) => {
+            db.collection('restaurant').findOne({
+                place_id: restaurant.place_id
+            }, (err, result) => {
                 return err ? errHandle(err) : callback(result);
             });
         }, (err) => {
