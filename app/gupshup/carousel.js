@@ -16,7 +16,7 @@ module.exports = {
                     url: result.mapUrl
                 }, {
                     type: 'text',
-                    title: 'Add to Titansoft List'
+                    title: 'Add to Titansoft list'
                 }]
             };
             carousel.items.push(item);

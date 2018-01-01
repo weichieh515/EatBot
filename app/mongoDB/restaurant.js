@@ -7,7 +7,7 @@ let self = module.exports = {
                 self.insert(restaurant, callback, errHandle);
             } else {
                 return errHandle({
-                    message: `${restaurant.name} already exits`
+                    message: `${restaurant.name} is already in the Titansoft list`
                 })
             }
         }, (err) => {
