@@ -45,11 +45,12 @@ let self = module.exports = {
     },
     random: (callback, errHandle) => {
         connect((db) => {
-            db.collection('restaurant').aggregate({
+            db.collection('restaurant').aggregate([{
                 $sample: {
                     size: 1
                 }
-            }).toArray((err, result) => {
+            }]).toArray((err, result) => {
+                console.log(result);
                 return err ? errHandle(err) : callback(result);
             });
         }, (err) => {
