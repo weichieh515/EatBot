@@ -50,7 +50,6 @@ let self = module.exports = {
                     size: 1
                 }
             }]).toArray((err, result) => {
-                console.log(result);
                 return err ? errHandle(err) : callback(result);
             });
         }, (err) => {
