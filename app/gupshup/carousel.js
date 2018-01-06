@@ -11,9 +11,8 @@ module.exports = {
                 subtitle: result.description,
                 imgurl: result.photoUrl,
                 options: [{
-                    type: 'url',
-                    title: 'view on Google map',
-                    url: result.mapUrl
+                    type: 'text',
+                    title: 'Google Map Url'
                 }, {
                     type: 'text',
                     title: 'Add to Titansoft list'
@@ -35,13 +34,14 @@ module.exports = {
                 subtitle: result.description,
                 imgurl: result.photoUrl,
                 options: [{
-                    type: 'url',
-                    title: 'view on Google map',
-                    url: result.mapUrl
+                    type: 'text',
+                    title: 'Google Map Url'
                 }, {
-                    type: 'phone_number',
-                    title: 'Call',
-                    phone_number: result.phone
+                    type: 'text',
+                    title: 'Phone Number'
+                },{
+                    type: 'text',
+                    title: 'Opening Hours'
                 }]
             };
             carousel.items.push(item);
